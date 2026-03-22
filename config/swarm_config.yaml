@@ -1,0 +1,50 @@
+# Forest Swarm Configuration
+# Tunable parameters for multi-drone forest search missions
+
+# Swarm settings
+num_drones: 3
+
+# Search area boundaries (NED coordinates, meters)
+search_area:
+  x_min: -50
+  x_max: 50
+  y_min: -50
+  y_max: 50
+
+# Flight parameters
+flight_altitude: -8        # NED frame: negative = above ground (meters)
+cruise_speed: 3.0          # m/s
+max_speed: 5.0             # m/s absolute limit
+
+# Sensor parameters
+sensor_range: 15.0         # lidar range in meters
+camera_fov: 90             # degrees
+
+# Safety distances
+safe_distance_obstacle: 3.0   # minimum distance to obstacles (meters)
+safe_distance_drone: 4.0      # minimum inter-drone distance (meters)
+
+# Artificial Potential Field parameters
+apf_repulsive_gain: 5.0       # repulsive force scaling factor
+apf_attractive_gain: 1.0      # attractive force scaling factor
+apf_influence_distance: 10.0  # obstacle influence range (meters)
+
+# RRT* path planning parameters
+rrt_max_iterations: 1000
+rrt_step_size: 2.0             # meters
+rrt_goal_sample_rate: 0.1     # probability of sampling goal directly
+rrt_search_radius: 5.0        # rewiring radius (meters)
+
+# Target detection (HSV color range for red objects)
+target_color_hsv_lower: [0, 120, 70]
+target_color_hsv_upper: [10, 255, 255]
+target_detection_min_area: 500  # minimum contour area in pixels
+
+# Area coverage
+sweep_line_spacing: 8.0   # meters between sweep lines
+overlap_ratio: 0.2        # overlap between adjacent drone sectors
+
+# Mission parameters
+mission_timeout: 300       # seconds
+update_rate: 10            # Hz
+log_interval: 1.0          # seconds between log entries

@@ -1,0 +1,6 @@
+airsim
+numpy
+scipy
+matplotlib
+pyyaml
+opencv-python
